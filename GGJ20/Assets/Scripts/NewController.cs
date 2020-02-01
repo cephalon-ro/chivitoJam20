@@ -43,7 +43,11 @@ public class NewController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    touchSat.hp += 1;
+                    //If Satellite HP is lower than 0 do nothing
+                    if (touchSat.hp > 0)
+                    {
+                      touchSat.hp += 1;
+                    }
                 }
             }
     }

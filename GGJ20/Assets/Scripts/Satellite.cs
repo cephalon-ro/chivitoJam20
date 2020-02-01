@@ -6,22 +6,31 @@ namespace Assets.Scripts
     {
         public string codename;
         public Slider hpSlider;
-        public Text satText;
+        public TextMesh satText;
         public float hp;
         public float maxHp;
-
+        RectTransform rt;
          void Start()
         {
+            satText.transform.position = new Vector3(transform.position.x, (transform.position.y + 8), transform.position.z);
+            rt = hpSlider.GetComponent<RectTransform>();
+            rt.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            hpSlider.transform.position = new Vector3(transform.position.x, (transform.position.y + 5), transform.position.z);
             hp = maxHp;
             hpSlider.maxValue = maxHp;
             hpSlider.value = hp;
-            satText.fontSize = 20;
             satText.text = codename;
         }
         void Update()
         {
            hp -= 1 * Time.deltaTime;
            hpSlider.value = hp;
+
+            if (hp <= 0)
+            {
+                hpSlider.gameObject.SetActive(false);
+                satText.gameObject.SetActive(false);
+            }
         }
     }
   
