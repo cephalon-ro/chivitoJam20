@@ -35,4 +35,12 @@ public class CameraSingleton : MonoBehaviour {
         return Vector3.zero;
     }
 
+    public static int GetPixelHeight() {
+        return Instance.cam.pixelHeight;
+    }
+
+    public static int GetPixelWidth() {
+        return Instance.cam.pixelWidth;
+    }
+
 }
