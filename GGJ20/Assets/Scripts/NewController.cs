@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace Assets.Scripts { 
 public class NewController : MonoBehaviour
 {
     Quaternion targetRotation;
@@ -9,10 +9,12 @@ public class NewController : MonoBehaviour
     public float forwardVel = 12;
     public float rotatevel = 6;
     public float maxVel = 40;
-    private float currentVel = 0;
+    public bool onSat = false;
+    public Satellite touchSat;
     float forwardInput, turnInput;
     private Vector3 moveDir = Vector3.zero;
     CharacterController cBody;
+    public int playerID;
     public Quaternion TargetRotation
     {
         get { return targetRotation; }
@@ -21,6 +23,7 @@ public class NewController : MonoBehaviour
 
     void Start()
     {
+            
         if (GetComponent<CharacterController>())
             cBody = GetComponent<CharacterController>();
 
@@ -36,13 +39,21 @@ public class NewController : MonoBehaviour
         GetInput();
         Run();
         Turn();
+            if (touchSat != null && onSat == true)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    touchSat.hp += 1;
+                }
+            }
     }
     void GetInput()
     {
-        if (Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxis("Vertical" + playerID) != 0)
             forwardInput = 1;
-        turnInput = Input.GetAxis("Horizontal");
+        turnInput = Input.GetAxis("Horizontal" + playerID);
     }
+
     void Run()
     {
         // if (Mathf.Abs(forwardInput) > inputDelay)
@@ -59,4 +70,6 @@ public class NewController : MonoBehaviour
         transform.Rotate(0, turnInput * rotatevel, 0);
         cBody.Move(moveDir * Time.deltaTime);
     }
+
+}
 }

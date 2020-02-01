@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 52
+  controlID: 62
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 53
+  controlID: 63
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 54
+  controlID: 64
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,20 +338,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Chaqueta\Documents\chivitoJam20\GGJ20
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 74330000
-    m_LastClickedID: 13172
-    m_ExpandedIDs: 000000007433000000ca9a3b
+    m_SelectedIDs: 08350000
+    m_LastClickedID: 13576
+    m_ExpandedIDs: 00000000fc34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +379,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000074330000
+    m_ExpandedIDs: 00000000fc340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300002235000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -564,9 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 15.190118, y: -18.518839, z: 45.18435}
+    m_Target: {x: -5.8111486, y: -71.60823, z: 61.13338}
     speed: 2
-    m_Value: {x: 15.190118, y: -18.518839, z: 45.18435}
+    m_Value: {x: -5.8111486, y: -71.60823, z: 61.13338}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -604,28 +604,28 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.34934342, y: -0.045794483, z: 0.017104581, w: -0.9357388}
+    m_Target: {x: -0.40888616, y: -0.15429471, z: 0.07038348, w: -0.8967464}
     speed: 2
-    m_Value: {x: -0.34933683, y: -0.04579362, z: 0.017104259, w: -0.93572116}
+    m_Value: {x: -0.40888616, y: -0.1542947, z: 0.07038348, w: -0.8967464}
   m_Size:
-    m_Target: 93.85432
+    m_Target: 703.30023
     speed: 2
-    m_Value: 93.85432
+    m_Value: 703.30023
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.7
+    m_SpeedNormalized: 0.34999996
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -636,7 +636,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: -0.12552449, y: -0.084128894, z: 0.0107011525, w: -0.9885102}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -691,8 +691,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -575
     m_HBaseRangeMax: 575
-    m_VBaseRangeMin: -262.5
-    m_VBaseRangeMax: 262.5
+    m_VBaseRangeMin: -273
+    m_VBaseRangeMax: 273
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -709,11 +709,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1150
-      height: 525
+      height: 546
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 575, y: 262.5}
+    m_Translation: {x: 575, y: 273}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -721,9 +721,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -575
-      y: -262.5
+      y: -273
       width: 1150
-      height: 525
+      height: 546
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1150, y: 546}
