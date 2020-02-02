@@ -9,14 +9,16 @@ public class LevelTransition : MonoBehaviour
     float secondsToTransition = 10f;
     // Start is called before the first frame update
     void Start() {
-        StartCoroutine(SceneTransitionTimer());
+        //StartCoroutine(SceneTransitionTimer());
         StartCoroutine(SceneTransitionKey());
     }
 
+    /*
     private IEnumerator SceneTransitionTimer() {
         yield return new WaitForSeconds(secondsToTransition);
         TransitionScene();
     }
+    */
 
     private IEnumerator SceneTransitionKey() {
         while (!Input.anyKey) {

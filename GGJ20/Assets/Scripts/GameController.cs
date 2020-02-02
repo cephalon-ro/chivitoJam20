@@ -115,6 +115,7 @@ namespace Assets.Scripts
             //Display player 1 sign
             P1WinCanvasObj.SetActive(true);
             Debug.Log("Player 1 wins");
+            yield return new WaitForSeconds(2f);
             while (!Input.anyKey && !Input.anyKeyDown) {
                 yield return null;
             }
@@ -126,6 +127,7 @@ namespace Assets.Scripts
             //Display player 2 sign
             P2WinCanvasObj.SetActive(true);
             Debug.Log("Player 2 wins");
+            yield return new WaitForSeconds(2f);
             while (!Input.anyKey && !Input.anyKeyDown) {
                 yield return null;
             }
