@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - SatelliteRepair
+  - Provider1
+  - Provider2
   layers:
   - Default
   - TransparentFX

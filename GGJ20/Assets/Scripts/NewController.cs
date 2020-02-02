@@ -15,6 +15,7 @@ namespace Assets.Scripts {
         private Vector3 moveDir = Vector3.zero;
         CharacterController cBody;
         public int playerID;
+        public KeyCode repButton;
         bool teleport = false;
         Vector3 teleportCoords;
 
@@ -43,13 +44,13 @@ namespace Assets.Scripts {
             GetInput();
             Run();
             Turn();
-                if (touchSat != null && onSat == true)
-                {
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        touchSat.hp += 1;
-                    }
-                }
+            if (touchSat != null && onSat == true)
+            {
+                touchSat.satText.gameObject.SetActive(true);
+                //If Satellite HP is below 0 this does nothing
+                if (touchSat.hp > 0 && Input.GetKeyDown(repButton))
+                    touchSat.hp += 1;
+            }
         }
 
         private void LateUpdate() {
