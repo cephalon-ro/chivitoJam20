@@ -10,6 +10,7 @@ namespace Assets.Scripts
         public float hp;
         public float maxHp;
         RectTransform rt;
+        
          void Start()
         {
             satText.gameObject.SetActive(false);
