@@ -11,7 +11,7 @@ namespace Assets.Scripts
         public TextMesh satText;
         public float hp;
         public float maxHp;
-        MeshRenderer rend;
+        public Transform sat;
         RectTransform rt;
         AudioSource aSource;
         bool dead = false;
@@ -27,7 +27,6 @@ namespace Assets.Scripts
             hp = maxHp;
             hpSlider.maxValue = maxHp;
             hpSlider.value = hp;
-            rend = GetComponent<MeshRenderer>();
         }
 
         void Update() {
@@ -44,6 +43,7 @@ namespace Assets.Scripts
             }
         }
 
+
         private IEnumerator KillSatEffect() {
             Vector3 oldScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
             float scaleMult = 1.5f;
@@ -51,12 +51,15 @@ namespace Assets.Scripts
             transform.localScale = newScale;
             aSource.volume = 0.4f;
             aSource.PlayOneShot(Resources.Load<AudioClip>("Sats/Sat-Explotion"));
-            Color oldColor = rend.material.color;
             //rend.material.color = rend.material.color + new Color(0.7f, 0.2f, 0.2f);
             yield return null;
+            MeshRenderer[] rends = GetComponentsInChildren<MeshRenderer>();
             yield return null;
             yield return null;
-            rend.material.color = oldColor * 0.3f;
+            foreach (MeshRenderer mesh in rends) {
+                mesh.material.color = mesh.material.color * 0.3f;
+            }
+            //rend.material.color = oldColor * 0.3f;
             yield return null;
             transform.localScale = oldScale;
         }
