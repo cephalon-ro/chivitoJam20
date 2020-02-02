@@ -24,8 +24,12 @@ public class CameraSingleton : MonoBehaviour {
     }
 
     public static Vector3 CameraPositionToScenario(float x, float y, float z) {
+        return CameraPositionToScenario(new Vector3(x, y, z));
+    }
+
+    public static Vector3 CameraPositionToScenario(Vector3 cameraPosition) {
         RaycastHit hit;
-        Ray ray = GetCamera().ScreenPointToRay(new Vector3(x, y, z));
+        Ray ray = GetCamera().ScreenPointToRay(cameraPosition);
         int layerMask = 0;
         layerMask = 1 << 8;
         if (Physics.Raycast(ray, out hit, layerMask)) {
