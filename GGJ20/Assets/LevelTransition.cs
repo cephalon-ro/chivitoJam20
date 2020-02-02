@@ -5,18 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
+
+    public string targetScene = "SampleScene";
+
     bool transitioning = false;
     float secondsToTransition = 10f;
     // Start is called before the first frame update
     void Start() {
-        StartCoroutine(SceneTransitionTimer());
+        //StartCoroutine(SceneTransitionTimer());
         StartCoroutine(SceneTransitionKey());
     }
 
+    /*
     private IEnumerator SceneTransitionTimer() {
         yield return new WaitForSeconds(secondsToTransition);
         TransitionScene();
     }
+    */
 
     private IEnumerator SceneTransitionKey() {
         while (!Input.anyKey) {
@@ -28,7 +33,7 @@ public class LevelTransition : MonoBehaviour
     private void TransitionScene() {
         if (!transitioning) {
             transitioning = true;
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(targetScene);
         }
     }
 }
