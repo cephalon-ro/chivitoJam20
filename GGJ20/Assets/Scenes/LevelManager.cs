@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,5 +15,19 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public void StartScene() {
+        //Debug.Log("a");
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void CreditsScene() {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void ExitUnity() {
+        Application.Quit();
     }
 }
