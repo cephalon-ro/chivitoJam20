@@ -1863,7 +1863,7 @@ GameObject:
   - component: {fileID: 948941373}
   - component: {fileID: 948941372}
   - component: {fileID: 948941376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2114,9 +2114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27c6c2333ec7224fa1afa3ef207dea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1979666359}
+  player: {fileID: 1979666355}
   P1CanvasX: 0
   P1CanvasY: 0
+  warpZeroHeight: 0
+  warpZeroWidth: 0
 --- !u!1 &1046073823
 GameObject:
   m_ObjectHideFlags: 0
