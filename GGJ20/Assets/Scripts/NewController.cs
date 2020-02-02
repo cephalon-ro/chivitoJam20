@@ -64,9 +64,9 @@ namespace Assets.Scripts {
             if (Input.GetAxis("Vertical" + playerID) != 0)
                 forwardInput = 1;
             turnInput = Input.GetAxis("Horizontal" + playerID);
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                transform.position = Vector3.zero;
-            }
+            //if (Input.GetKeyDown(KeyCode.Space)) {
+            //    transform.position = Vector3.zero;
+            //}
         }
 
         void Run()

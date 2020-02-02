@@ -706,6 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: Don't doubt ur Vibe
   hpSlider: {fileID: 2091182862}
   satText: {fileID: 164573002}
@@ -872,6 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: David Bowie
   hpSlider: {fileID: 1760008966}
   satText: {fileID: 41639907}
@@ -1823,7 +1825,7 @@ PrefabInstance:
     - target: {fileID: 3546473486698622813, guid: 9742c9c1d9caeb340a5aacf173dae2f3,
         type: 3}
       propertyPath: m_Name
-      value: WarpManager
+      value: WarpManagerP1
       objectReference: {fileID: 0}
     - target: {fileID: 3546473486698622815, guid: 9742c9c1d9caeb340a5aacf173dae2f3,
         type: 3}
@@ -2775,6 +2777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SatellitesP1: []
   SatellitesP2: []
+  p1Sats: 0
+  p2Sats: 0
 --- !u!4 &556446392
 Transform:
   m_ObjectHideFlags: 0
@@ -3614,6 +3618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: Cuphead
   hpSlider: {fileID: 294485838}
   satText: {fileID: 1964702620}
@@ -4185,6 +4190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: huelga
   hpSlider: {fileID: 419972050}
   satText: {fileID: 1725978499}
@@ -4628,6 +4634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: delet fortnite
   hpSlider: {fileID: 949464565}
   satText: {fileID: 277413796}
@@ -6227,6 +6234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: alexa play skyrim
   hpSlider: {fileID: 1813211670}
   satText: {fileID: 2053154563}
@@ -7355,6 +7363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: dinero
   hpSlider: {fileID: 1444517848}
   satText: {fileID: 48655658}
@@ -7715,7 +7724,7 @@ PrefabInstance:
     - target: {fileID: 3546473486698622813, guid: 9742c9c1d9caeb340a5aacf173dae2f3,
         type: 3}
       propertyPath: m_Name
-      value: WarpManager (1)
+      value: WarpManagerP2
       objectReference: {fileID: 0}
     - target: {fileID: 3546473486698622815, guid: 9742c9c1d9caeb340a5aacf173dae2f3,
         type: 3}
@@ -8331,6 +8340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41dda19d71212743ae08a67ae3a0394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   codename: prime delivery drone
   hpSlider: {fileID: 569121405}
   satText: {fileID: 435842882}

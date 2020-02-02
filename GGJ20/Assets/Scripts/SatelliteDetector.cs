@@ -12,12 +12,12 @@ namespace Assets.Scripts
         public float DetectionRange;
         public SatelliteProvider Provider;
         public NewController player;
-        private void Start()
-        {
+
+        private void Start() {
             player = GetComponentInParent<NewController>();
         }
-        void Update()
-        {
+
+        void Update() {
             var candidate = Provider.ClosestInRange(transform.position, DetectionRange);
             if (candidate != null)
             {
@@ -25,8 +25,7 @@ namespace Assets.Scripts
                 player.onSat = true;
                 player.touchSat = candidate;
             }
-            else
-            {
+            else {
                 player.onSat = false;
                 player.touchSat = null;
             }

@@ -1,17 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 namespace Assets.Scripts
 {
     public class Satellite : MonoBehaviour
     {
+        public PlayerId player;
         public string codename;
         public Slider hpSlider;
         public TextMesh satText;
         public float hp;
         public float maxHp;
         RectTransform rt;
-         void Start()
-        {
+
+
+         void Start() {
             satText.gameObject.SetActive(false);
             satText.transform.position = new Vector3(transform.position.x, (transform.position.y + 8), transform.position.z);
             rt = hpSlider.GetComponent<RectTransform>();
@@ -22,15 +25,29 @@ namespace Assets.Scripts
             hpSlider.value = hp;
             satText.text = codename;
         }
-        void Update()
-        {
+
+        void Update() {
            hp -= 1 * Time.deltaTime;
            hpSlider.value = hp;
 
-            if (hp <= 0)
-            {
+            if (hp <= 0) {
                 hpSlider.gameObject.SetActive(false);
+                GameController.KillSat(player);
+                StartCoroutine(KillSatEffect());
             }
+        }
+
+        private IEnumerator KillSatEffect() {
+            Vector3 oldScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            float scaleMult = 1.5f;
+            Vector3 newScale = new Vector3(oldScale.x * scaleMult, oldScale.y * scaleMult, oldScale.z * scaleMult);
+            transform.localScale = newScale;
+            yield return null;
+            yield return null;
+            yield return null;
+            yield return null;
+            yield return null;
+            transform.localScale = oldScale;
         }
     }
   
