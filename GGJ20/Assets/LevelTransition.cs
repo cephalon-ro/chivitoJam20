@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
+
+    public string targetScene = "SampleScene";
+
     bool transitioning = false;
     float secondsToTransition = 10f;
     // Start is called before the first frame update
@@ -30,7 +33,7 @@ public class LevelTransition : MonoBehaviour
     private void TransitionScene() {
         if (!transitioning) {
             transitioning = true;
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(targetScene);
         }
     }
 }
