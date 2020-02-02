@@ -24,6 +24,8 @@ namespace Assets.Scripts
                 Debug.Log($"Estoy cerca del satelite con codename: {candidate.codename}");
                 player.onSat = true;
                 player.touchSat = candidate;
+                candidate.satText.gameObject.SetActive(true);
+                candidate.satText.text = candidate.codename;
             }
             else {
                 player.onSat = false;

@@ -18,15 +18,15 @@ namespace Assets.Scripts
 
          void Start() {
             aSource = GetComponent<AudioSource>();
-            satText.gameObject.SetActive(false);
+            satText.text = codename;
             satText.transform.position = new Vector3(transform.position.x, (transform.position.y + 8), transform.position.z);
+            satText.gameObject.SetActive(false);
             rt = hpSlider.GetComponent<RectTransform>();
             rt.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             hpSlider.transform.position = new Vector3(transform.position.x, (transform.position.y + 5), transform.position.z);
             hp = maxHp;
             hpSlider.maxValue = maxHp;
             hpSlider.value = hp;
-            satText.text = codename;
             rend = GetComponent<MeshRenderer>();
         }
 
@@ -49,6 +49,7 @@ namespace Assets.Scripts
             float scaleMult = 1.5f;
             Vector3 newScale = new Vector3(oldScale.x * scaleMult, oldScale.y * scaleMult, oldScale.z * scaleMult);
             transform.localScale = newScale;
+            aSource.volume = 0.4f;
             aSource.PlayOneShot(Resources.Load<AudioClip>("Sats/Sat-Explotion"));
             Color oldColor = rend.material.color;
             //rend.material.color = rend.material.color + new Color(0.7f, 0.2f, 0.2f);
