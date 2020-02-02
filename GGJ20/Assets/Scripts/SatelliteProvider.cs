@@ -10,10 +10,21 @@ namespace Assets.Scripts
     public class SatelliteProvider :MonoBehaviour
     {
         List<Satellite> satellites;
-
+        public GameController ctrl;
         void Start()
         {
+            ctrl = FindObjectOfType<GameController>();
             satellites = GetComponentsInChildren<Satellite>().ToList();
+            
+            switch (gameObject.tag)
+            {
+                case "Provider1":
+                    ctrl.SatellitesP1.AddRange(satellites);
+                    break;
+                case "Provider2":
+                    ctrl.SatellitesP2.AddRange(satellites);
+                    break;
+            }
         }
 
         public IEnumerable<Satellite> InRage(Vector3 position, float range)
