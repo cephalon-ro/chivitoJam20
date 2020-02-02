@@ -5,6 +5,7 @@ namespace Assets.Scripts {
     public class NewController : MonoBehaviour
     {
         Quaternion targetRotation;
+        public PlayerId player;
         public float inputDelay = 0.1f;
         public float forwardVel = 12;
         public float rotatevel = 6;

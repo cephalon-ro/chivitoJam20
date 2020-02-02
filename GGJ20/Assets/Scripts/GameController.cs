@@ -10,6 +10,14 @@ namespace Assets.Scripts
 
         public static GameController _instance;
 
+        static bool gameInProgress = true;
+
+        public static bool GameIsInProgress {
+            get {
+                return gameInProgress;
+            }
+        }
+
         public static GameController Instance {
             get {
                 return _instance;
@@ -20,9 +28,12 @@ namespace Assets.Scripts
         public List<Satellite> SatellitesP1 = new List<Satellite>();
         public List<Satellite> SatellitesP2 = new List<Satellite>();
 
-        public int p1Sats;
-        public int p2Sats;
+        public int p1Sats = 4;
+        public int p2Sats = 4;
 
+        public GameObject DrawCanvasObj;
+        public GameObject P1WinCanvasObj;
+        public GameObject P2WinCanvasObj;
 
         private void Awake() {
             _instance = this;
@@ -44,11 +55,13 @@ namespace Assets.Scripts
             if (player == PlayerId.Player1) {
                 if (Instance.p1Sats > 0) {
                     Instance.p1Sats--;
+                    Instance.CheckGameEnd();
                 }
             }
             if (player == PlayerId.Player2) {
                 if (Instance.p2Sats > 0) {
                     Instance.p2Sats--;
+                    Instance.CheckGameEnd();
                 }
             }
         }
@@ -63,9 +76,9 @@ namespace Assets.Scripts
                 if (p2Sats < 1) {
                     GameEnd(PlayerId.None);
                 }
-                GameEnd(PlayerId.Player1);
-            } else if (p2Sats < 1) {
                 GameEnd(PlayerId.Player2);
+            } else if (p2Sats < 1) {
+                GameEnd(PlayerId.Player1);
             }
         }
         
@@ -74,12 +87,15 @@ namespace Assets.Scripts
         private void GameEnd(PlayerId player) {
             if (player == PlayerId.None) {
                 //Caso de empate
+                gameInProgress = false;
                 StartCoroutine(DoDraw());
             } else if (player == PlayerId.Player1) {
                 //Caso de jugador 1
+                gameInProgress = false;
                 StartCoroutine(Player1Wins());
             } else if (player == PlayerId.Player2) {
                 //Caso de jugador 2
+                gameInProgress = false;
                 StartCoroutine(Player2Wins());
             }
 
@@ -88,23 +104,32 @@ namespace Assets.Scripts
 
         private IEnumerator DoDraw() {
             //Display draw sign
+            DrawCanvasObj.SetActive(true);
+            Debug.Log("Draw");
             yield return new WaitForSeconds(5f);
+            gameInProgress = true;
             SceneManager.LoadScene("SampleScene");
         }
 
         private IEnumerator Player1Wins() {
             //Display player 1 sign
+            P1WinCanvasObj.SetActive(true);
+            Debug.Log("Player 1 wins");
             while (!Input.anyKey && !Input.anyKeyDown) {
                 yield return null;
             }
+            gameInProgress = true;
             SceneManager.LoadScene("SampleScene");
         }
 
         private IEnumerator Player2Wins() {
             //Display player 2 sign
+            P2WinCanvasObj.SetActive(true);
+            Debug.Log("Player 2 wins");
             while (!Input.anyKey && !Input.anyKeyDown) {
                 yield return null;
             }
+            gameInProgress = true;
             SceneManager.LoadScene("SampleScene");
         }
 

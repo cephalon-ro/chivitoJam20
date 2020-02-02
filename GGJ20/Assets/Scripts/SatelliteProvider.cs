@@ -7,13 +7,18 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class SatelliteProvider :MonoBehaviour
+    public class SatelliteProvider : MonoBehaviour
     {
         List<Satellite> satellites;
         public GameController ctrl;
+        public NameProvider nameProvider;
+
         void Start()
         {
             ctrl = FindObjectOfType<GameController>();
+
+            UpdateSatellites();
+            /*
             satellites = GetComponentsInChildren<Satellite>().ToList();
             
             switch (gameObject.tag)
@@ -25,7 +30,28 @@ namespace Assets.Scripts
                     ctrl.SatellitesP2.AddRange(satellites);
                     break;
             }
+            */
         }
+
+
+        private void UpdateSatellites() {
+            satellites = GetComponentsInChildren<Satellite>().ToList();
+            foreach (Satellite sat in satellites) {
+                if (string.IsNullOrEmpty(sat.codename)) {
+                    sat.codename = nameProvider.GetSatName();
+                }
+            }
+            switch (gameObject.tag)
+            {
+                case "Provider1":
+                    ctrl.SatellitesP1.AddRange(satellites);
+                    break;
+                case "Provider2":
+                    ctrl.SatellitesP2.AddRange(satellites);
+                    break;
+            }
+        }
+
 
         public IEnumerable<Satellite> InRage(Vector3 position, float range)
         {
@@ -44,6 +70,10 @@ namespace Assets.Scripts
             }
 
             return null;
+        }
+
+        public string GetSatName() {
+            return nameProvider.GetSatName();
         }
     }
 }
