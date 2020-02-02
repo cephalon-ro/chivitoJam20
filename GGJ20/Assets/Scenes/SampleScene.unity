@@ -1688,7 +1688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &354590852
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7672,7 +7672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satelliteNames:
-  - David Bowie
+  - "Not A Satellite\u2122"
   - Don't doubt ur Vibe
   - delet fortnite
   - Cuphead
@@ -7806,8 +7806,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9f7f74bf732b35246af1d67a97d5124a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8698,11 +8698,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satelliteNames:
-  - dinero
-  - huelga
+  - money
+  - workers union
   - AWS
   - prime delivery drone
-  - amazon
 --- !u!1 &2146729280
 GameObject:
   m_ObjectHideFlags: 0
