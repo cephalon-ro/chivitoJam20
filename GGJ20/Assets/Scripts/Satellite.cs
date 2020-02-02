@@ -12,6 +12,7 @@ namespace Assets.Scripts
         RectTransform rt;
          void Start()
         {
+            satText.gameObject.SetActive(false);
             satText.transform.position = new Vector3(transform.position.x, (transform.position.y + 8), transform.position.z);
             rt = hpSlider.GetComponent<RectTransform>();
             rt.localScale = new Vector3(0.1f, 0.1f, 0.1f);
@@ -29,7 +30,6 @@ namespace Assets.Scripts
             if (hp <= 0)
             {
                 hpSlider.gameObject.SetActive(false);
-                satText.gameObject.SetActive(false);
             }
         }
     }

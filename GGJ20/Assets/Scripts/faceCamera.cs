@@ -8,7 +8,7 @@ public class faceCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_camera = FindObjectOfType<CameraSingleton>().cam;
     }
 
     // Update is called once per frame

@@ -15,6 +15,7 @@ public class NewController : MonoBehaviour
     private Vector3 moveDir = Vector3.zero;
     CharacterController cBody;
     public int playerID;
+    public KeyCode repButton;
     public Quaternion TargetRotation
     {
         get { return targetRotation; }
@@ -39,16 +40,11 @@ public class NewController : MonoBehaviour
         GetInput();
         Run();
         Turn();
-            if (touchSat != null && onSat == true)
-            {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    //If Satellite HP is lower than 0 do nothing
-                    if (touchSat.hp > 0)
-                    {
-                      touchSat.hp += 1;
-                    }
-                }
+            if (touchSat != null && onSat == true){
+                touchSat.satText.gameObject.SetActive(true);
+               //If Satellite HP is below 0 this does nothing
+                if (touchSat.hp > 0 && Input.GetKeyDown(repButton))
+                    touchSat.hp += 1;
             }
     }
     void GetInput()
