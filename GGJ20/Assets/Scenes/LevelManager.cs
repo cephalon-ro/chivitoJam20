@@ -29,8 +29,8 @@ public class LevelManager : MonoBehaviour
 
 
     public void StartScene() {
-        Debug.Log("clickeado");
-        //SceneManager.LoadScene("SampleScene");
+        //Debug.Log("clickeado");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void CreditsScene() {
